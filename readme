@@ -1,0 +1,31 @@
+You are a senior Java test architect specializing in legacy monolithic systems.
+
+I will provide a Java method (2000+ lines).
+
+Your task is NOT to write tests yet.
+
+STEP 1:
+- Break the method into logical execution blocks.
+- Identify:
+  - All conditional branches (if/else, switch)
+  - All loops (for, while, do-while)
+  - Early returns
+  - Null checks
+  - Exception blocks
+  - Nested condition paths
+  - Static method calls
+  - Constructor calls (new keyword)
+  - Calls to other internal methods
+
+STEP 2:
+Create a structured Coverage Matrix table:
+
+For each block:
+- Block ID
+- Condition required to enter
+- Dependencies involved
+- What must be mocked
+- Expected observable outcome
+
+Do NOT write test code yet.
+Wait for my instruction.
