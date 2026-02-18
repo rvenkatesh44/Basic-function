@@ -1,0 +1,19 @@
+Based on the coverage matrix:
+
+For each dependency:
+- Categorize as:
+  - Static method
+  - Constructor (new)
+  - Internal private method
+  - External service
+  - Entity traversal
+
+For each category, explain precisely how to mock/control it using:
+
+- Mockito
+- PowerMockito.mockStatic
+- PowerMockito.whenNew
+- Spy + doReturn
+- Reflection (if needed)
+
+Explain strategy BEFORE writing any test code.
