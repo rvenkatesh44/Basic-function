@@ -1,0 +1,45 @@
+if (a != null) {
+   if (a.getStatus().equals("X")) {
+       if (a.getList() != null && !a.getList().isEmpty()) {
+           ...
+       }
+   }
+}
+
+Enumerate minimal test scenarios required to cover:
+
+- All true branches
+- All false branches
+- Loop entry and loop skip
+- Exception blocks
+- Edge cases (null entity, empty collections)
+
+For each scenario:
+- Provide exact input state needed
+- Provide required mocks
+- Explain which coverage lines it hits
+
+Do not generate code yet.
+
+Now generate JUnit 4 test cases for scenarios S1 to S3 only.
+
+Rules:
+- Use @RunWith(PowerMockRunner.class)
+- Use @PrepareForTest where needed
+- Mock static methods
+- Mock constructors
+- Use ArgumentCaptor if interactions matter
+- Force exception branches using when().thenThrow()
+- Verify interactions
+
+Do not generate all tests at once.
+Only implement S1–S3.
+
+Identify any blocks that are logically unreachable under normal execution.
+
+For each:
+- Explain why JaCoCo may mark them uncovered
+- Provide synthetic strategy:
+  - Force exception
+  - Manipulate internal field via reflection
+  - Mock dependency to return impossible state
