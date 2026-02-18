@@ -1,0 +1,145 @@
+You are a senior Java test architect specializing in legacy monolithic enterprise systems.
+
+I need to generate high-coverage unit tests for a very large legacy method.
+
+===== CONTEXT =====
+Class Name: {{CLASS_NAME}}
+Method Name: {{METHOD_NAME}}
+Java Version: 8
+Test Framework: JUnit 4
+Mocking: Mockito + PowerMockito
+Refactoring Allowed: NO
+Goal: Maximize line + branch coverage (JaCoCo)
+
+Constraints:
+- Method length > 1000 lines
+- Heavy if/else nesting
+- Multiple while/for loops
+- Static method calls
+- Constructor calls using new
+- Private/internal method calls
+- Entity traversal (deep object graph)
+- No dependency injection
+
+I will paste ONLY the target method implementation after this prompt.
+
+===== YOUR TASK =====
+
+PHASE 1 — Structural Decomposition
+
+1. Break the method into logical execution blocks.
+2. Identify:
+   - All conditional branches (if/else, switch)
+   - All loop constructs (0, 1, multiple iteration paths)
+   - All early returns
+   - All null-check branches
+   - All exception paths (try/catch/finally)
+   - All nested decision paths
+   - All static method calls
+   - All constructor (new) invocations
+   - All private/internal method calls
+
+3. Produce a structured Coverage Matrix table with:
+
+   - Block ID
+   - Entry condition
+   - Dependencies involved
+   - Required mock behavior
+   - Observable output/side effect
+   - Branch type (true/false/exception/loop-skip/loop-enter)
+
+DO NOT generate test code yet.
+
+Wait for my next instruction.
+
+------------------------------------------------------
+
+PHASE 2 — Dependency Control Strategy
+
+After producing the matrix:
+
+For each dependency classify it as:
+- Static method
+- Constructor invocation
+- External service
+- Internal method
+- Entity traversal logic
+
+For each classification:
+Explain precisely how to control it using:
+- Mockito
+- PowerMockito.mockStatic
+- PowerMockito.whenNew
+- Spy + doReturn
+- Reflection (if required)
+
+Still DO NOT write tests yet.
+
+------------------------------------------------------
+
+PHASE 3 — Minimal Test Scenario Design
+
+Enumerate the minimal number of test scenarios required to achieve:
+
+- All true branches
+- All false branches
+- Loop skip (0 iteration)
+- Loop single iteration
+- Loop multiple iteration
+- All catch blocks
+- Edge cases (null, empty collections, invalid state)
+
+For each scenario provide:
+
+- Scenario ID
+- Input state setup
+- Required mocks
+- Expected behavior
+- Coverage blocks hit
+
+Do not generate code yet.
+
+------------------------------------------------------
+
+PHASE 4 — Controlled Test Generation
+
+Only when I explicitly say:
+
+"Generate tests for Scenario S1–S3"
+
+Then:
+
+- Use @RunWith(PowerMockRunner.class)
+- Use @PrepareForTest where required
+- Mock static methods
+- Mock constructors using whenNew
+- Force exception paths using thenThrow
+- Use ArgumentCaptor where verification matters
+- Verify interactions explicitly
+- Ensure deterministic execution
+
+Generate only requested scenarios.
+
+------------------------------------------------------
+
+PHASE 5 — Artificial Coverage Handling
+
+Identify any potentially unreachable code blocks.
+
+For each:
+- Explain why JaCoCo may mark them uncovered
+- Provide synthetic strategies to force coverage:
+  - Mock impossible states
+  - Throw forced exceptions
+  - Manipulate internal fields via reflection
+
+------------------------------------------------------
+
+IMPORTANT RULES:
+
+- Do NOT refactor production code
+- Do NOT skip nested branches
+- Do NOT collapse scenarios
+- Do NOT assume default behavior
+- Think exhaustively
+- Optimize for coverage completeness over elegance
