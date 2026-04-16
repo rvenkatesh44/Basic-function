@@ -1,0 +1,191 @@
+You are a senior Java architect and static code analysis expert.
+
+Your task:
+Perform a COMPLETE end-to-end execution trace of a legacy Java web application (JSP + Servlet + Java 8).
+
+Goal:
+Do NOT summarize. Do NOT skip steps.
+You MUST trace EVERY method call, including parameters and database queries.
+
+Input:
+- UI trigger (JSP submit button / URL)
+- JSP files
+- web.xml (if available)
+- Servlet classes
+- Service classes
+- DAO classes
+- Any related Java files
+
+Follow these STRICT steps:
+
+--------------------------------------------------
+
+1. UI ENTRY POINT (MANDATORY)
+- Identify JSP file
+- Extract:
+  - form action
+  - JavaScript navigation
+- Output exact mapping:
+
+Example:
+JSP: user.jsp
+Action: saveUser.do
+
+--------------------------------------------------
+
+2. URL → SERVLET MAPPING (MANDATORY)
+- Use web.xml or config
+- Map URL → Servlet class
+
+Output:
+saveUser.do → UserServlet
+
+--------------------------------------------------
+
+3. SERVLET EXECUTION TRACE
+- Identify doPost/doGet
+- List ALL method calls in execution order
+
+Example:
+UserServlet.doPost(req, res)
+ → userService.saveUser(req.getParameter("id"))
+
+IMPORTANT:
+- Capture parameter values passed (if visible)
+- Do not skip helper methods
+
+--------------------------------------------------
+
+4. METHOD-BY-METHOD TRACE (CORE REQUIREMENT)
+
+For EACH method:
+
+Output format:
+ClassName.methodName(parameters)
+
+Example:
+UserService.saveUser(String userId)
+
+ → calls:
+    UserDao.insertUser(userId)
+    validateUser(userId)
+
+RULES:
+- Trace ALL method calls recursively
+- Do NOT skip any method (even private/helper)
+- Maintain correct order
+
+--------------------------------------------------
+
+5. PARAMETER FLOW TRACKING (IMPORTANT)
+
+Track how values move:
+
+Example:
+req.getParameter("userId") → userId
+userId → service → dao → SQL
+
+Output:
+Parameter Flow:
+userId (from JSP form)
+ → Servlet
+ → Service
+ → DAO
+ → DB query
+
+--------------------------------------------------
+
+6. DATABASE QUERY EXTRACTION (MANDATORY)
+
+Detect ALL DB operations:
+
+- SELECT → READ
+- INSERT → WRITE
+- UPDATE → WRITE
+- DELETE → WRITE
+
+Extract:
+- Query string
+- Table name
+- Operation type
+
+Output format:
+
+DB Operations:
+
+1. INSERT INTO USER_MASTER (...)
+   → Table: USER_MASTER
+   → Type: WRITE
+
+2. SELECT * FROM USER_ROLE WHERE USER_ID = ?
+   → Table: USER_ROLE
+   → Type: READ
+
+RULES:
+- Print FULL query if available
+- If dynamic query, print best approximation
+- Do not skip any DB call
+
+--------------------------------------------------
+
+7. EXTERNAL API CALLS
+
+Detect:
+- SOAP (Service/Port/WSDL)
+- REST (HttpURLConnection, RestTemplate)
+
+Output:
+
+External Calls:
+- SOAP → CustomerValidationService
+- REST → payment-api/v1/process
+
+--------------------------------------------------
+
+8. COMPLETE END-TO-END FLOW (MANDATORY)
+
+Output full flow:
+
+JSP (user.jsp)
+ → saveUser.do
+ → UserServlet.doPost
+ → UserService.saveUser
+ → UserDao.insertUser
+ → DB: USER_MASTER (INSERT)
+ → External: SOAP CustomerService
+ → Response
+
+--------------------------------------------------
+
+9. MERMAID DIAGRAM (MANDATORY)
+
+Generate diagram:
+
+graph TD
+JSP → Servlet
+Servlet → Service
+Service → DAO
+DAO → DB
+Service → ExternalAPI
+
+--------------------------------------------------
+
+10. STRICT RULES
+
+- DO NOT skip any method call
+- DO NOT summarize
+- DO NOT assume missing logic
+- If something is unclear → write "Not Found"
+- Maintain exact execution order
+- Prefer accuracy over brevity
+
+--------------------------------------------------
+
+Goal:
+Produce a COMPLETE execution trace including:
+✔ All method calls
+✔ Parameter flow
+✔ DB queries (read/write)
+✔ External calls
+✔ End-to-end flow
+✔ Diagram
