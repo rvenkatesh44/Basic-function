@@ -1,0 +1,267 @@
+You are an elite software observability agent running inside GitHub Copilot / Codex / Claude with full repository access.
+
+TASK:
+Read the entire repository and generate ONE production-quality SVG dashboard that closely resembles a real Cisco AppDynamics Transaction Flow Map.
+
+IMPORTANT:
+Do NOT generate a generic architecture diagram.
+Do NOT generate markdown.
+Do NOT explain anything.
+Return ONLY valid SVG code.
+
+Use real evidence from repository files only.
+
+==================================================
+STEP 1 — READ THE REPOSITORY
+==================================================
+
+Scan all files recursively:
+
+src/**
+pom.xml
+build.gradle
+package.json
+requirements.txt
+Dockerfile
+docker-compose.yml
+helm/**
+k8s/**
+*.yaml
+*.yml
+application.properties
+application.yml
+.env*
+sql/**
+*.sql
+Jenkinsfile
+terraform/**
+nginx.conf
+
+==================================================
+STEP 2 — DISCOVER REAL COMPONENTS
+==================================================
+
+Infer and map actual systems.
+
+A. Business Transactions
+Find from:
+- controllers
+- routes
+- REST endpoints
+- UI actions
+- schedulers
+
+Examples:
+Login
+Checkout
+SubmitOrder
+GenerateReport
+FundTransfer
+SearchCustomer
+
+B. Tiers
+Create AppDynamics style tiers:
+
+- Web Tier
+- API Tier
+- Service Tier
+- Worker Tier
+- Integration Tier
+- Cache Tier
+- Messaging Tier
+- Database Tier
+
+C. Nodes
+If Kubernetes:
+use pod replicas as nodes
+
+If docker:
+containers as nodes
+
+If monolith:
+JVM node1, node2
+
+D. Backends
+Find:
+
+- Oracle
+- MySQL
+- PostgreSQL
+- MongoDB
+- Redis
+- Kafka
+- RabbitMQ
+- IBM MQ
+- REST APIs
+- SOAP APIs
+- LDAP
+- SMTP
+- Payment gateways
+- S3
+- Vault
+
+==================================================
+STEP 3 — TRACE REAL CALL FLOWS
+==================================================
+
+Infer actual request chains:
+
+Browser
+-> Load Balancer
+-> Web Tier
+-> API Tier
+-> Service Tier
+-> DB
+
+Service A
+-> Kafka
+-> Worker
+-> External API
+
+Controller
+-> Service
+-> DAO
+-> DB
+
+Mark:
+
+sync calls = solid line
+async queue calls = dashed line
+
+==================================================
+STEP 4 — APPDYNAMICS EXACT STYLE LAYOUT
+==================================================
+
+Canvas:
+3200 x 1800
+
+Background:
+#f8fafc white-gray clean dashboard
+
+TOP HEADER:
+------------------------------------------------
+[App Name] [Health %] [Calls/min]
+[Avg Resp Time] [Errors/min]
+------------------------------------------------
+
+TOP NAV TABS:
+Dashboard | Events | Slow Response Times | Errors | Transaction Snapshots | Transaction Score
+
+LEFT PANEL:
+Business Transaction selector
+
+Example:
+ViewCart.sendItems
+
+CENTER MAIN PANEL:
+Transaction Flow Map
+
+Render exactly in enterprise topology style:
+
+Green tier circles:
+contains node count text
+
+Example:
++----------------+
+| 2 Nodes        |
+| Ecommerce Tier |
++----------------+
+
+Gray DB cylinders
+
+Blue queue cylinders
+
+Connections:
+Smooth blue arrows
+Dashed blue async arrows
+
+Arrow labels:
+10.6 ms JDBC
+217 ms HTTP
+3.1 ms JMS
+
+RIGHT PANEL:
+Health Summary Rings
+
+Show:
+Tiers
+Nodes
+Critical alerts
+
+BOTTOM PANEL:
+Mini timeline:
+Deploy
+Error spike
+Slow DB
+
+==================================================
+STEP 5 — VISUAL RULES
+==================================================
+
+Nodes:
+green ring = healthy
+amber = warning
+red = critical
+
+Use exact APM style circles and cylinders.
+
+Lines:
+smooth bezier curves
+sharp arrows
+
+Text:
+NEVER clip text
+Allow text overflow outside shapes
+Auto-size labels
+
+Typography:
+Segoe UI / Inter style
+
+Spacing:
+No overlap
+Balanced alignment
+
+Readable at 500% zoom
+
+==================================================
+STEP 6 — MONOLITH SPECIAL MODE
+==================================================
+
+If legacy Java repo:
+
+Main Tier = Tomcat Cluster
+
+Expandable internal flow:
+
+Controller
+-> Service
+-> DAO
+-> Oracle
+
+Show method hotspots if found.
+
+==================================================
+STEP 7 — KUBERNETES MODE
+==================================================
+
+If k8s manifests found:
+
+show:
+
+Deployment replicas
+Pods
+Ingress
+Service mesh
+
+Replicas become nodes count.
+
+==================================================
+STEP 8 — OUTPUT
+==================================================
+
+Return ONLY final SVG markup.
+
+No markdown fences.
+No explanation.
+No comments unless inside SVG.
+```0
