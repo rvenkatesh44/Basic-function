@@ -1,0 +1,82 @@
+Create a professional enterprise-grade SVG architecture diagram for Application Performance Monitoring (APM) with Distributed Tracing.
+
+Theme:
+Modern observability dashboard style, clean white or dark background, premium SaaS product quality, similar to AppDynamics / Datadog / New Relic.
+
+Canvas:
+Large horizontal SVG canvas (2200 x 1400), ultra high resolution, crisp vector lines.
+
+Main Components:
+1. End Users / Clients
+   - Web Browser
+   - Mobile App
+   - API Consumers
+
+2. Load Balancer / API Gateway
+
+3. Microservices Layer
+   - Auth Service
+   - User Service
+   - Product Service
+   - Order Service
+   - Payment Service
+   - Notification Service
+
+4. Databases
+   - MySQL
+   - Redis
+   - Kafka
+   - Elasticsearch
+
+5. Kubernetes Cluster / Containers
+
+6. Monitoring Layer
+   - APM Agents
+   - Metrics Collector
+   - Log Collector
+   - Trace Collector
+
+7. Observability Platform
+   - Dashboard
+   - Alerts Engine
+   - AI Root Cause Analysis
+   - SLA Monitoring
+   - Business Transactions
+
+Distributed Tracing Flow:
+Show request entering from browser → gateway → auth → order → payment → notification.
+Each hop must have trace span IDs with dotted path or glowing line.
+
+Arrow Style:
+Use smooth curved arrows, elegant bezier connectors, thick lines, premium flow design.
+No rough arrows.
+
+Text Requirements:
+All labels fully visible.
+No text clipping.
+Allow text overflow outside boxes if needed.
+Auto-adjust padding.
+Clear readable typography.
+
+Box Style:
+Rounded rectangles, subtle shadows, modern UI cards.
+Different colors for layers:
+Blue = services
+Green = monitoring
+Orange = databases
+Purple = AI analytics
+
+Extra Elements:
+- Response time badges (120ms, 350ms)
+- Error rate indicators
+- CPU / memory mini charts
+- Latency heatmap
+
+Layout:
+Perfect alignment, no overlap, balanced spacing.
+Enterprise presentation quality.
+
+Output:
+Pure SVG vector image.
+Sharp zoom-in quality.
+Readable at 400% zoom.
