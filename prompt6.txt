@@ -1,0 +1,294 @@
+You are an elite UI reverse-engineering agent with repository access.
+
+MISSION:
+Read the complete source repository and generate ONE SVG that is an extremely close visual replica of the uploaded AppDynamics Transaction Flow Map dashboard.
+
+CRITICAL:
+Use the uploaded AppDynamics screenshot as the visual reference standard.
+Recreate nearly every visible detail:
+layout, spacing, tabs, toolbar icons, circles, node rings, queue icons, DB icons, arrow labels, fonts, alignment, proportions, paddings, map placement, colors.
+
+Do NOT generate a generic dashboard.
+Do NOT simplify.
+Do NOT redesign.
+Do NOT modernize.
+Recreate the same enterprise AppDynamics look and feel.
+
+Return ONLY SVG code.
+
+==================================================
+VISUAL REFERENCE TO REPLICATE
+==================================================
+
+Top Left:
+Business Transaction dropdown title
+
+Example:
+ViewCart.sendItems
+
+Small dropdown arrow box next to title.
+
+Second Row Tabs:
+Dashboard
+Events
+Slow Response Times
+Errors
+Transaction Snapshots
+Transaction Score
+
+Dashboard tab blue active underline.
+
+Thin horizontal divider line below tabs.
+
+Third Row:
+Left label:
+Transaction Flow Map ▼
+
+Right side toolbar icons:
+flow map icon
+list icon
+ring icon
+dot cluster icon
+network icon
+rectangle icon
+
+Use subtle gray icons.
+Active icon blue highlight square.
+
+==================================================
+MAIN CANVAS STRUCTURE
+==================================================
+
+Large white background topology map.
+
+Left side vertical zoom slider:
+gray track with handle.
+
+Center map must resemble same placement logic:
+
+LEFT MAIN START NODE:
+Green circular ring
+White center
+Inside text:
+2
+Nodes
+
+Blue Java badge attached lower-left.
+
+Below node label:
+ECommerce-Services
+
+Green START pill button under label.
+
+TOP LEFT DATABASE:
+Gray DB cylinder icon
+
+Label:
+APPDY-MySQL DB-DB
+
+Connector from start node:
+blue arrow upward diagonal
+
+Arrow label:
+10.6 ms
+JDBC
+
+==================================================
+ASYNC QUEUE FLOWS
+==================================================
+
+Three dashed blue arrow flows from start node to queue nodes.
+
+Queue node style:
+blue cylinder horizontal capsule.
+
+Labels:
+
+Active MQ-CustomerQueue
+Active MQ-OrderQueue
+Active MQ-fulfillmentQueue
+
+Arrow labels examples:
+
+3.1 ms (async)
+JMS
+
+6.3 ms (async)
+JMS
+
+15.9 ms (async)
+JMS
+
+==================================================
+CENTER RIGHT NODE
+==================================================
+
+Green circular ring node.
+
+Inside:
+1
+Node
+
+Blue Java badge attached.
+
+Label:
+Order-Processing-Services
+
+Three dashed queue connectors arrive into this node.
+
+Solid blue connector from this node to right tier ring.
+
+Arrow label:
+9.3 s
+HTTP
+
+Small async connector label:
+28.8 ms (async)
+
+==================================================
+RIGHT HEALTH RING NODE
+==================================================
+
+Large outer green ring
+Inner red ring
+White center
+
+Inside stacked text:
+
+2
+TIERS
+
+divider line
+
+2
+NODES
+
+Right side text:
+9.3 s (44.8%)
+
+Label under ring:
+ECommerce-Fulfillment
+
+==================================================
+BOTTOM CENTER NODE
+==================================================
+
+Green circular ring node
+
+Inside:
+1
+Node
+
+Blue Java badge.
+
+Label:
+Inventory-Services
+
+Connector from left start node downward diagonal.
+
+Arrow label:
+217.7 ms
+Web Service
+
+Connector from this node to right DB backend.
+
+Arrow label:
+20.5 s
+JDBC
+
+Small near node:
+6.2 ms (0%)
+
+==================================================
+BOTTOM RIGHT DB
+==================================================
+
+Gray DB cylinder icon.
+
+Label:
+2 JDBC backends
+
+==================================================
+REPOSITORY INTELLIGENCE
+==================================================
+
+Replace sample names with real repository findings.
+
+Read repo and detect:
+
+1. Business transaction names from routes/controllers
+2. Tier names from modules/services/apps
+3. Node counts from k8s replicas/docker instances
+4. DB names from datasource configs
+5. Queue names from MQ/Kafka configs
+6. Protocol labels:
+HTTP
+JDBC
+JMS
+REST
+gRPC
+
+7. Latency labels inferred from telemetry or placeholders.
+
+==================================================
+STYLE RULES
+==================================================
+
+Canvas:
+1536 x 936 exact screenshot ratio
+
+Background:
+#ffffff
+
+Font:
+Segoe UI / Arial / clean enterprise sans
+
+Text:
+sharp black/gray
+No clipping
+Overflow allowed outside shapes
+
+Green ring:
+#7ed321
+
+Blue arrow:
+#4a90e2
+
+Gray DB:
+#9aa3af
+
+Dashed async lines:
+same blue with short dashes
+
+Stroke widths similar to screenshot.
+
+Circles:
+same proportions as reference.
+
+Spacing:
+Match screenshot closely.
+
+==================================================
+LAYOUT RULES
+==================================================
+
+Preserve screenshot composition:
+
+left start node
+top db
+middle queues
+center-right processing node
+right health ring
+bottom inventory node
+bottom-right db
+
+Do not auto rearrange randomly.
+
+==================================================
+OUTPUT RULES
+==================================================
+
+Return ONLY valid SVG markup.
+No markdown.
+No explanations.
+No extra text.
