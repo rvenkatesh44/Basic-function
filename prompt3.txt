@@ -1,0 +1,255 @@
+You are a world-class observability UI designer and software architecture reverse-engineering AI.
+
+Objective:
+Read the complete source repository and generate a premium enterprise SVG dashboard architecture diagram inspired by Cisco AppDynamics style.
+
+IMPORTANT:
+Do NOT copy trademarks or logos.
+Use only inspiration from enterprise APM dashboards:
+clean topology maps, health indicators, transaction flow, tier relationships, KPI cards, modern monitoring UI.
+
+Use actual repo evidence only:
+source code, configs, manifests, SQL, Dockerfiles, Kubernetes yaml, CI/CD, env files.
+
+==================================================
+PHASE 1 — REPOSITORY INTELLIGENCE
+==================================================
+
+Analyze and discover:
+
+1. Applications
+- Java / Spring Boot / JSP / Servlet
+- Node.js
+- Python
+- .NET
+- React / Angular
+- Batch jobs
+
+2. Runtime Tiers
+- Web tier
+- API tier
+- Service tier
+- Worker tier
+- Scheduler tier
+- Database tier
+- Cache tier
+- Messaging tier
+
+3. Full Call Chain
+Trace real flows:
+
+Browser
+-> Gateway
+-> Controller
+-> Service
+-> DAO
+-> DB
+
+and
+
+Service A
+-> Kafka
+-> Worker
+-> Notification
+
+4. Databases
+Detect:
+Oracle, MySQL, PostgreSQL, SQL Server, MongoDB, Redis, Cassandra
+
+Extract:
+- connection names
+- schemas
+- read/write flows
+- query hotspots
+- stored procedures
+- ORM mappings
+
+5. Third Party Systems
+Detect:
+REST, SOAP, MQ, SMTP, SSO, OAuth, Payment APIs, Vault, LDAP, Cloud Services
+
+6. Containers / Docker
+Detect:
+Dockerfiles, ports, startup, healthcheck, sidecars
+
+7. Kubernetes
+Detect:
+Deployment
+Service
+Ingress
+HPA
+CronJob
+ConfigMap
+Secrets refs
+Namespaces
+Probe settings
+
+8. Telemetry
+Detect:
+Prometheus
+Grafana
+OpenTelemetry
+Jaeger
+Zipkin
+ELK
+Splunk
+AppDynamics agents
+
+==================================================
+PHASE 2 — APPDYNAMICS STYLE VISUAL MODEL
+==================================================
+
+Create a topology dashboard similar to premium APM tools.
+
+Main dashboard zones:
+
+TOP HEADER:
+- Application Name
+- Overall Health Score
+- Current Alerts
+- Avg Response Time
+- Requests/min
+- Error Rate
+- Throughput
+
+LEFT PANEL:
+Business Transactions list:
+- Login
+- Search Product
+- Checkout
+- Payment
+- Report Generation
+
+CENTER MAIN CANVAS:
+Live application flow map
+
+Nodes:
+- Browser
+- Mobile
+- Load Balancer
+- Web App
+- Auth Service
+- Product Service
+- Order Service
+- Payment Service
+- Notification Worker
+- DB Cluster
+- Redis
+- Kafka
+- External APIs
+
+RIGHT PANEL:
+Health widgets:
+- JVM CPU
+- Heap Memory
+- Slow Calls
+- DB Wait Time
+- Pod Restarts
+- Network Errors
+
+BOTTOM PANEL:
+Incident timeline / anomalies
+
+==================================================
+DISTRIBUTED TRACING
+==================================================
+
+Overlay request traces:
+
+User -> Gateway -> Auth -> Order -> Payment -> DB -> Kafka -> Notify
+
+Display:
+- Span IDs
+- 120ms / 340ms badges
+- Failed span in red
+- Retry path dotted amber line
+- Async events dashed line
+
+==================================================
+SVG STYLE REQUIREMENTS
+==================================================
+
+Canvas:
+3200 x 1900
+
+Theme:
+Dark enterprise dashboard
+
+Background:
+#0f172a style deep navy
+
+Cards:
+Rounded corners
+Soft glow borders
+Subtle shadows
+
+Node Style:
+Modern service tiles with status lights
+
+Healthy = green
+Warning = amber
+Critical = red
+Unknown = gray
+
+Typography:
+Inter / Roboto style
+Sharp readable text
+
+Text Rules:
+No clipping ever
+Allow overflow outside box
+Auto expand labels
+Readable at 500% zoom
+
+Arrows:
+Smooth bezier curves
+Elegant directional connectors
+Glowing flow lines
+Animated look (static SVG styling)
+
+Spacing:
+Perfect grid alignment
+No overlap
+Professional consulting quality
+
+==================================================
+ADVANCED OVERLAYS
+==================================================
+
+Show badges on nodes:
+
+CPU 62%
+MEM 71%
+TPS 1.2k
+ERR 0.8%
+P95 320ms
+
+Highlight bottlenecks:
+red pulse border
+
+Show dependency confidence:
+solid = confirmed
+dotted = inferred
+
+==================================================
+OUTPUT MODES
+==================================================
+
+If monolith:
+Render tiered internals:
+Controller -> Service -> DAO -> DB
+
+If microservices:
+Render service mesh map
+
+If hybrid:
+Render both topology + internal monolith drilldown
+
+==================================================
+FINAL OUTPUT
+==================================================
+
+Return ONLY SVG markup.
+No explanations.
+No markdown.
+No extra text.
