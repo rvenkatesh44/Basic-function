@@ -1,0 +1,256 @@
+You are an elite software architecture reverse-engineering AI.
+
+Objective:
+Read the entire source repository and generate a complete enterprise-grade SVG architecture diagram for Application Performance Monitoring (APM) + Distributed Tracing.
+
+IMPORTANT:
+Do NOT guess. Infer from actual code, configs, imports, manifests, SQL, properties, yaml, Dockerfiles, Helm charts, Kubernetes manifests, CI/CD files, Terraform, scripts, and environment configs.
+
+==================================================
+PHASE 1 — REPOSITORY ANALYSIS
+==================================================
+
+Scan all files recursively and detect:
+
+1. Application Stack
+- Java / Spring Boot / JSP / Servlet / Hibernate
+- Node.js / Express
+- Python / Django / Flask
+- .NET
+- React / Angular / Vue
+- Batch jobs / schedulers
+
+2. Entry Points
+- Controllers
+- REST endpoints
+- GraphQL endpoints
+- Message consumers
+- Scheduled jobs
+- CLI jobs
+
+3. Internal Call Flow
+Trace:
+Controller -> Service -> Helper -> DAO -> Repository -> DB
+
+Detect:
+- synchronous calls
+- async calls
+- retries
+- thread pools
+- queues
+
+4. Database Calls
+Extract ALL databases used:
+
+- Oracle
+- MySQL
+- PostgreSQL
+- SQL Server
+- MongoDB
+- Redis
+- Cassandra
+- DynamoDB
+
+Find:
+- JDBC URLs
+- datasource configs
+- entity mappings
+- SQL queries
+- stored procedures
+- ORM repositories
+- slow query candidates
+- read/write separation
+
+Generate DB dependency map.
+
+5. Third Party Integrations
+Detect ALL external systems:
+
+- REST APIs
+- SOAP
+- MQ
+- Kafka
+- RabbitMQ
+- SMTP
+- Payment gateways
+- OAuth / SSO
+- AWS / Azure / GCP services
+- S3
+- Vault
+- LDAP
+- SMS / Email providers
+
+Extract:
+- endpoint URLs
+- client classes
+- retry logic
+- timeout configs
+- auth type
+
+6. Docker / Containers
+Detect:
+
+- Dockerfiles
+- docker-compose
+- container ports
+- health checks
+- base images
+- startup commands
+- sidecars
+
+7. Kubernetes
+Detect:
+
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+- configmap
+- secret refs
+- hpa
+- cronjobs
+- namespaces
+- probes
+- resource requests/limits
+
+8. Observability
+Detect:
+
+- Prometheus
+- Grafana
+- AppDynamics
+- OpenTelemetry
+- Jaeger
+- Zipkin
+- ELK
+- Splunk
+- logback configs
+
+9. Security Layer
+Detect:
+
+- JWT
+- OAuth2
+- Spring Security
+- RBAC
+- API keys
+- TLS termination
+
+==================================================
+PHASE 2 — DISTRIBUTED TRACE MODEL
+==================================================
+
+Generate real request traces based on code paths.
+
+Examples:
+User -> API Gateway -> Auth Service -> Order Service -> Payment API -> DB -> Kafka -> Notification Service
+
+Include:
+- span IDs
+- latency badges
+- error hotspots
+- retry loops
+- async queue paths
+
+==================================================
+PHASE 3 — SVG OUTPUT REQUIREMENTS
+==================================================
+
+Generate ONLY SVG.
+
+Canvas:
+3000 x 1800
+
+Quality:
+Ultra sharp vector
+Readable at 500% zoom
+
+Style:
+Premium enterprise SaaS observability platform
+
+Background:
+White or dark graphite
+
+Layout:
+Layered left to right architecture flow
+
+Sections:
+
+1. Users / Clients
+2. Gateway / Load Balancer
+3. Application Services
+4. Databases
+5. External Systems
+6. Kubernetes Cluster
+7. Monitoring / APM Layer
+8. Alerts / AI RCA
+
+==================================================
+DESIGN RULES
+==================================================
+
+Boxes:
+Rounded corners
+Soft shadows
+Modern cards
+
+Colors:
+Blue = App services
+Orange = Databases
+Green = Monitoring
+Purple = AI / Analytics
+Red = Failures / Bottlenecks
+Gray = Infra
+
+Arrows:
+Smooth bezier curves
+Elegant thick connectors
+Directional arrows
+No jagged lines
+
+Text:
+NEVER clip text
+Allow overflow outside box
+Auto expand labels
+High readability
+Use Inter / Roboto font
+
+Spacing:
+No overlap
+Perfect alignment
+Professional consulting deck quality
+
+==================================================
+APM OVERLAYS
+==================================================
+
+Show:
+
+- response times
+- TPS
+- error %
+- CPU
+- memory
+- DB latency
+- queue lag
+- pod restarts
+- top slow APIs
+
+Highlight hotspots in red.
+
+==================================================
+OUTPUT RULES
+==================================================
+
+If repo is monolith:
+Generate call chain map.
+
+If repo is microservices:
+Generate service mesh topology.
+
+If mixed:
+Generate hybrid diagram.
+
+If uncertain:
+Mark with dotted lines labeled "inferred".
+
+Return only final SVG code.
