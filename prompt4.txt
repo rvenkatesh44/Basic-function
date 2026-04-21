@@ -1,0 +1,364 @@
+You are an elite observability platform UI architect and code intelligence engine.
+
+MISSION:
+Read the full source repository and generate an SVG dashboard that looks and behaves like a real Cisco AppDynamics-style application flow map.
+
+IMPORTANT:
+Do NOT generate a generic architecture diagram.
+Do NOT generate a simple flowchart.
+Generate an exact enterprise APM dashboard style with:
+- Application Flow Map
+- Business Transactions
+- Tiers
+- Nodes
+- Databases
+- Backends
+- Health indicators
+- Metrics badges
+- Alerts
+- Snapshot panels
+
+Do NOT copy logos or trademarks.
+Only mimic enterprise APM dashboard layout and topology style.
+
+==================================================
+PRIMARY OBJECTIVE
+==================================================
+
+By reading repo files, auto-discover real system components and map them into:
+
+APPDYNAMICS STYLE HIERARCHY:
+
+Application
+ ├── Business Transactions
+ ├── Tiers
+ │    ├── Nodes
+ │    ├── JVMs / Containers
+ │    └── Health
+ ├── Databases
+ ├── Remote Services / Backends
+ ├── Message Queues
+ ├── Errors
+ └── Performance Metrics
+
+==================================================
+PHASE 1 — REPO DISCOVERY
+==================================================
+
+Read recursively:
+
+- src/
+- pom.xml
+- build.gradle
+- package.json
+- requirements.txt
+- Dockerfile
+- docker-compose.yml
+- helm charts
+- k8s manifests
+- application.properties
+- application.yml
+- env files
+- SQL files
+- liquibase / flyway
+- nginx conf
+- Jenkinsfile
+- terraform
+
+Infer all systems from actual evidence.
+
+==================================================
+DISCOVER APPLICATION TIERS
+==================================================
+
+Create exact tiers based on code:
+
+Examples:
+
+1. Web Tier
+- JSP
+- React frontend
+- Angular UI
+- Nginx
+
+2. API Tier
+- Spring Controllers
+- Express routes
+
+3. Service Tier
+- Business services
+
+4. Worker Tier
+- Batch jobs
+- Async workers
+
+5. Integration Tier
+- REST clients
+- SOAP clients
+
+6. Cache Tier
+- Redis
+
+7. Messaging Tier
+- Kafka
+- RabbitMQ
+- IBM MQ
+
+8. Database Tier
+- Oracle
+- MySQL
+- PostgreSQL
+- Mongo
+
+==================================================
+DISCOVER NODES INSIDE EACH TIER
+==================================================
+
+Create real nodes:
+
+If Kubernetes:
+- pod names
+- deployment replicas
+- containers
+
+If VM:
+- hostname inferred
+
+If monolith:
+- JVM node1
+- JVM node2
+
+If docker:
+- container names
+
+==================================================
+DISCOVER BUSINESS TRANSACTIONS
+==================================================
+
+Infer transactions from controllers/routes:
+
+Examples:
+
+- Login
+- SearchCustomer
+- Checkout
+- SubmitOrder
+- GenerateReport
+- PaymentAuthorization
+- FundTransfer
+- StatementDownload
+
+For each transaction map full path:
+
+Browser
+-> LB
+-> Web Tier
+-> Service Tier
+-> DB
+-> External API
+
+==================================================
+DISCOVER BACKENDS
+==================================================
+
+Show all external systems:
+
+- Payment Gateway
+- SMS Gateway
+- Email SMTP
+- LDAP
+- OAuth SSO
+- SAP
+- Mainframe
+- Vendor APIs
+- AWS S3
+- Vault
+
+==================================================
+DISCOVER DATABASE CALLS
+==================================================
+
+Show DB nodes with:
+
+- schema names
+- connection pools
+- slow queries
+- read/write paths
+- stored procedure usage
+
+==================================================
+DISCOVER PERFORMANCE DATA
+==================================================
+
+Infer or estimate placeholders:
+
+Response Time
+Calls / min
+Error %
+CPU
+Memory
+Heap
+GC
+DB Wait
+Queue Lag
+
+==================================================
+VISUAL LAYOUT (EXACT APPDYNAMICS FEEL)
+==================================================
+
+Canvas:
+3400 x 2000
+
+Theme:
+Dark modern APM dashboard
+
+Top Header Bar:
+--------------------------------------------------
+Application Name
+Health: 92%
+Load: High
+Calls/min
+Avg Response Time
+Errors/min
+Active Nodes
+--------------------------------------------------
+
+Left Sidebar:
+Business Transactions
+
+Searchable list:
+
+✔ Login
+✔ Checkout
+✔ Order Submit
+✔ Reports
+✔ Sync Job
+
+Middle Main Area:
+APPLICATION FLOW MAP
+
+Render circular / topology connected tiers exactly like APM maps:
+
+          Browser
+             |
+         Load Balancer
+          /      \
+      Web1       Web2
+        |          |
+     API Tier   API Tier
+        \        /
+       Service Tier
+      /     |      \
+   Auth   Order   Product
+      \      |      /
+         Database
+        /    |    \
+    Redis  Kafka  Oracle
+
+Right Sidebar:
+Node Health Widgets
+
+- JVM CPU
+- Heap
+- Pod Restarts
+- Slow Transactions
+- DB Latency
+- Error spikes
+
+Bottom Panel:
+Events Timeline
+
+- Deployment 12:40
+- Error Spike 12:43
+- DB Slowdown 12:45
+
+==================================================
+STYLE RULES
+==================================================
+
+Tier Nodes:
+Rounded capsules / service circles
+
+Health Colors:
+Green = healthy
+Amber = warning
+Red = critical
+Gray = unknown
+
+Connections:
+Smooth bezier lines
+Glowing traffic lines
+Directional arrows
+
+Line Thickness:
+Traffic volume based
+
+Text:
+No clipping ever
+Allow overflow outside nodes
+Auto-resize labels
+Readable at 500% zoom
+
+Typography:
+Inter / Segoe UI style
+
+Spacing:
+Balanced
+No overlaps
+Professional NOC dashboard quality
+
+==================================================
+TRACE OVERLAY
+==================================================
+
+When business transaction selected:
+
+Highlight exact path:
+
+Checkout:
+Browser -> Web1 -> API -> OrderSvc -> PaymentAPI -> Oracle
+
+Show span badges:
+
+35ms
+120ms
+450ms (red hotspot)
+
+Retries:
+amber dotted line
+
+Failed call:
+red broken line
+
+==================================================
+SPECIAL RULES
+==================================================
+
+If repo is legacy monolith:
+
+Create tier:
+Tomcat Cluster
+
+Inside expand:
+
+Controller
+Service
+DAO
+Oracle
+
+If microservices:
+
+Render service mesh topology
+
+If hybrid:
+
+Render both cluster + internal drilldown
+
+==================================================
+OUTPUT
+==================================================
+
+Return ONLY SVG code.
+No markdown.
+No explanation.
+No commentary.
