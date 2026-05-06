@@ -1,0 +1,12 @@
+Convert the selected SVG file into a standalone HTML file with an exact visual replica.
+
+Requirements:
+- Preserve exact UI/layout/design
+- Match colors, spacing, fonts, gradients, shadows, borders, alignment, and responsiveness
+- Use clean HTML + CSS
+- Prefer Flexbox/Grid over absolute positioning
+- Avoid canvas
+- Keep inline SVG only if absolutely necessary
+- Generate production-ready code
+- Create a single self-contained HTML file
+- Ensure the output visually matches the original SVG as closely as possible
