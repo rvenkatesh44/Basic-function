@@ -1,0 +1,11 @@
+Convert the selected SVG file into a standalone HTML + CSS implementation WITHOUT embedding or directly reusing the SVG.
+
+Requirements:
+- Recreate the design using pure HTML and CSS only
+- Do NOT use <svg>, <img>, canvas, or base64 embedded content
+- Preserve exact layout, spacing, colors, typography, gradients, shadows, borders, and alignment
+- Use Flexbox/Grid for layout
+- Keep the structure responsive and maintainable
+- Generate clean production-ready code
+- Create a single self-contained HTML file with embedded CSS
+- Match the original SVG design as closely as possible using native HTML/CSS elements only
