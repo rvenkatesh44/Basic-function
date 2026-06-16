@@ -1,0 +1,33 @@
+Before AI Adoption:
+Completed X story points per sprint/month
+
+After AI Adoption:
+Completed Y story points per sprint/month
+
+Improvement:
+((Y-X)/X)*100
+
+Total vulnerabilities remediated:
+XX
+
+Average vulnerabilities fixed per week:
+XX
+
+Coverage improved from:
+A% → B%
+
+Repositories completed:
+X
+
+Test cases added:
+Y
+
+PRs Raised:
+X
+
+PRs Merged:
+Y
+
+Average turnaround:
+Z days
+
