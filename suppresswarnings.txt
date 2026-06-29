@@ -1,0 +1,12 @@
+Analyze the selected Java method for SpotBugs/FindBugs warnings.
+
+Instructions:
+1. Identify the SpotBugs warning(s) applicable to the method.
+2. Determine whether the warning is a false positive or an acceptable risk.
+3. If suppression is justified, add the appropriate @SuppressFBWarnings annotation at the method level.
+4. Include the correct SpotBugs warning code (e.g., EI_EXPOSE_REP, EI_EXPOSE_REP2, DM_DEFAULT_ENCODING).
+5. Add a meaningful justification in the "justification" attribute explaining why the suppression is safe.
+6. Do not suppress warnings that should be fixed in code.
+7. If the issue can be fixed instead of suppressed, explain the code change and do not add @SuppressFBWarnings.
+8. Preserve existing functionality and formatting.
+9. Return only the updated method.
