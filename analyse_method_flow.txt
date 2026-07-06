@@ -1,0 +1,72 @@
+You are a senior Java application analyzer.
+
+Objective:
+Analyze the selected Java method and determine whether it is used anywhere in the codebase.
+
+Instructions:
+
+1. Search the entire workspace for all references to the selected method.
+2. If the method is NOT referenced, clearly state:
+   "This method appears to be unused."
+3. If the method is referenced:
+   - Identify every caller.
+   - Trace the complete execution flow from the entry point (Controller, Servlet, Filter, Scheduler, Listener, REST API, Batch Job, JMS, etc.) to the selected method.
+4. Produce a hierarchical call tree showing every method invocation.
+5. Identify:
+   - Controller/Entry Point
+   - Service layer
+   - DAO/Repository layer
+   - Utility classes
+   - External API calls
+   - Database queries
+   - Kafka/JMS interactions
+   - File operations
+6. Highlight:
+   - Conditional branches
+   - Loops
+   - Exception handling
+   - Transaction boundaries
+7. Mention every class and method involved.
+8. If there are multiple execution paths, show each path separately.
+9. If the method is invoked indirectly (reflection, interface implementation, lambda, Spring proxy), identify that.
+10. Do not modify any code.
+
+Output Format:
+
+## Method Usage
+Used: Yes / No
+
+## Entry Point(s)
+- Controller:
+- Scheduler:
+- Servlet:
+- Other:
+
+## Call Flow
+Controller.method()
+    ↓
+Service.method()
+    ↓
+Utility.method()
+    ↓
+SelectedMethod()
+
+## Database Calls
+- Repository.method()
+- SQL/HQL executed
+
+## External Calls
+- REST
+- Kafka
+- JMS
+- File
+
+## Business Summary
+Briefly explain what the method does within the application.
+
+## Risks
+- Null checks
+- SQL Injection
+- Performance concerns
+- Deprecated APIs
+- Security issues
