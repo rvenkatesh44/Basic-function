@@ -1,0 +1,124 @@
+Analyze this entire repository and generate a comprehensive GitHub Copilot repository instruction file at:
+
+.github/copilot-instructions.md
+
+Do not modify application source code.
+
+First inspect:
+- pom.xml / Maven configuration
+- project/module structure
+- README and existing documentation
+- web.xml
+- Struts configuration
+- Spring XML configuration
+- application/configuration files
+- test structure
+- build and deployment configuration
+- major integration libraries
+- existing coding patterns
+
+The objective is to create repository-specific instructions that help Copilot safely understand and modify this codebase.
+
+Include the following sections:
+
+1. Project Overview
+   - Application purpose
+   - Major modules
+   - High-level architecture
+
+2. Technology Stack
+   - Java version
+   - Spring version
+   - Struts
+   - JSP
+   - JavaScript/jQuery
+   - Database
+   - Messaging
+   - REST/SOAP
+   - Workflow engine
+   - Other significant frameworks
+
+3. Architecture and Code Organization
+   - UI layer
+   - Controller/Action layer
+   - Service layer
+   - DAO/data layer
+   - Integration layer
+   - Configuration
+
+4. Coding Guidelines
+   - Follow existing patterns
+   - Avoid unnecessary refactoring
+   - Preserve backward compatibility
+   - Do not introduce new frameworks without explicit approval
+
+5. Legacy Application Rules
+   - Search the repository before declaring a method/class unused.
+   - Check JSP, JavaScript, XML configuration and Java references before modifying code.
+   - Trace the existing call flow before changing business logic.
+   - Do not assume annotations are used if XML configuration is present.
+   - Preserve existing workflows and integrations.
+
+6. Change Safety
+   Before modifying code:
+   - Identify callers
+   - Identify downstream dependencies
+   - Identify configuration dependencies
+   - Identify external system calls
+   - Identify impacted tests
+
+7. Testing
+   - Existing test framework
+   - Test conventions
+   - How to run tests
+   - Requirements for adding/modifying tests
+   - Do not remove tests merely to make a build pass
+
+8. Security
+   - Preserve existing security controls.
+   - Never expose credentials, tokens or sensitive information.
+   - Do not suppress security findings without understanding the data flow.
+   - Do not make security-related changes without identifying the impact.
+
+9. Build and Run
+   - Maven commands
+   - Test commands
+   - Application startup commands if identifiable
+
+10. AI Behaviour
+   - Do not guess when information is unavailable.
+   - Clearly identify assumptions.
+   - Prefer repository evidence over generic recommendations.
+   - When tracing a flow, provide file, class and method names.
+   - When making changes, explain affected files and why.
+   - Keep changes minimal and focused.
+
+11. Common Investigation Workflow
+   For a feature investigation, follow:
+
+   JSP/UI
+   → JavaScript/AJAX
+   → Struts mapping
+   → Controller/Action
+   → Spring configuration
+   → Service
+   → DAO
+   → Database
+   → External system
+
+12. Output Expectations
+   When analyzing code, provide:
+   - File path
+   - Class name
+   - Method name
+   - Call flow
+   - Dependencies
+   - Configuration references
+   - Risks/unknowns
+
+Important:
+- Base instructions only on evidence found in this repository.
+- Do not invent technologies or architectural patterns.
+- Keep the final copilot-instructions.md concise enough to be practical.
+- Avoid duplicating generic programming advice.
+- After generating the file, provide a short summary of the important instructions added.
