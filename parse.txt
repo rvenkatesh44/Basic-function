@@ -1,0 +1,271 @@
+You are a Senior Java Test Automation Engineer specializing in legacy enterprise applications.
+
+Objective
+
+Generate a realistic mock response body for a third-party API that can be used in unit/integration testing when the real third-party system is unavailable.
+
+The generated response MUST be compatible with the application's existing response parsing logic.
+
+The primary goal is:
+
+Third-party response
+→ existing parser methods
+→ existing response objects
+→ existing business logic
+
+The response must successfully pass through the existing parser without causing parsing errors, null pointer exceptions, missing-field issues, or unexpected conditional branches.
+
+Inputs
+
+Analyze the following:
+
+1. Third-party API response object/classes
+2. Parser methods
+3. All methods called by the parser
+4. Existing response mapping classes
+5. Existing XML/JSON parsing logic
+6. Existing constants/enums
+7. Existing conditional logic
+8. Existing unit tests
+9. Sample responses, if available
+10. Configuration/schema/XSD files, if available
+
+Do NOT modify production code.
+
+Step 1 — Identify Response Format
+
+Determine whether the third-party response is:
+
+- XML
+- JSON
+- SOAP XML
+- Plain text
+- Other structured format
+
+Identify:
+
+- Root element/object
+- Nested objects
+- Arrays
+- Attributes
+- Namespaces
+- Required fields
+- Optional fields
+- Repeated elements
+
+Step 2 — Trace Every Parser
+
+Find every parser method that processes the third-party response.
+
+For each parser method identify:
+
+- Method name
+- Input type
+- XML/JSON path being read
+- Target Java field
+- Expected data type
+- Null handling
+- Default value
+- Validation
+- Conditional logic
+
+Trace nested parser calls recursively.
+
+Do NOT stop after finding the first parser method.
+
+Step 3 — Identify All Conditions
+
+Find every condition dependent on response data.
+
+Examples:
+
+if
+else if
+else
+
+switch
+
+equals()
+
+contains()
+
+isEmpty()
+
+null checks
+
+numeric comparisons
+
+status checks
+
+error codes
+
+response codes
+
+business flags
+
+nested object checks
+
+For each condition document:
+
+Condition| Required Response Value| Expected Branch
+
+Example:
+
+if response.status == "SUCCESS"
+
+→ success branch
+
+if response.customer.status == "ACTIVE"
+
+→ active customer branch
+
+if response.accounts.size() > 0
+
+→ account processing branch
+
+Step 4 — Build Response Dependency Map
+
+Create:
+
+Third-party response field
+→ Parser
+→ Java object field
+→ Business condition
+→ Expected value
+
+Example:
+
+status
+→ parseStatus()
+→ response.status
+→ isSuccessful()
+→ "SUCCESS"
+
+customerDetails.customerType
+→ parseCustomer()
+→ customer.type
+→ validateCustomerType()
+→ "INDIVIDUAL"
+
+Step 5 — Generate Mock Response
+
+Generate ONE primary mock response that contains sufficient valid data to exercise the main successful business flow.
+
+The response must:
+
+- Match the exact expected format.
+- Contain every field required by the parser.
+- Contain valid values for all mandatory fields.
+- Contain valid nested structures.
+- Contain valid dates.
+- Contain valid numeric values.
+- Contain valid enumerations/codes.
+- Contain required namespaces for XML.
+- Preserve the expected casing.
+- Preserve the expected element/property names.
+- Include arrays/lists where the parser expects collections.
+- Include enough records to exercise collection-processing logic.
+
+Do NOT invent fields that the parser does not recognize unless the schema requires them.
+
+Step 6 — Validate Against Parser
+
+Before presenting the response, mentally execute the response through every parser method.
+
+For every accessed field confirm:
+
+- The field exists.
+- The path is correct.
+- The datatype is correct.
+- The value is parseable.
+- Required nested objects exist.
+- Required arrays are present.
+- No unexpected null is produced.
+
+Create a validation table:
+
+Parser| Field Accessed| Mock Value| Valid?
+
+Step 7 — Cover Multiple Conditions
+
+The primary mock should exercise as much of the normal successful path as reasonably possible.
+
+However, do NOT force mutually exclusive conditions into one response.
+
+Where conditions are mutually exclusive, create additional test responses:
+
+Mock 1 — Successful response
+
+Mock 2 — Error response
+
+Mock 3 — Empty/no-data response
+
+Mock 4 — Alternate business condition
+
+Only create additional mocks when the parser/business logic requires them.
+
+Step 8 — Detect Missing Information
+
+If a valid response cannot be generated because information is missing, do NOT guess.
+
+Report:
+
+- Missing field
+- Parser requiring it
+- Source code location
+- Why it is required
+- What information is needed
+
+Output
+
+Generate the following:
+
+1. Response Structure
+
+Explain the expected third-party response structure.
+
+2. Parser Call Flow
+
+API Response
+ ↓
+Parser A
+ ↓
+Parser B
+ ↓
+Response Object
+ ↓
+Business Logic
+
+3. Field Mapping
+
+| Response Field | Parser | Java Field | Required | Mock Value |
+
+4. Primary Mock Response
+
+Provide the complete response body in the exact format expected by the application.
+
+5. Additional Mocks
+
+Provide only the additional responses required to exercise important alternative branches.
+
+6. Parser Validation
+
+Explain why the generated response will successfully pass through the existing parser.
+
+7. Test Coverage
+
+List which conditions/branches are exercised by each mock.
+
+Critical Rules
+
+- Do not modify production code.
+- Do not simplify or bypass the existing parser.
+- Do not create a mock based only on the response POJO.
+- Analyze the actual parser implementation.
+- Search for every response field accessed by the parser.
+- Follow nested parser/helper methods.
+- Check XML/JSON paths exactly.
+- Preserve namespaces and casing.
+- Do not invent unsupported values.
+- If uncertain, explicitly mark the uncertainty.
+- The generated response must be valid for the application's EXISTING parsing implementation, not merely valid according to a generic schema.
