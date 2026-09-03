@@ -1,0 +1,51 @@
+Redesign the uploaded PowerPoint for presentation to senior management, including senior directors, CIO/technology leadership, and business stakeholders.
+
+IMPORTANT:
+- Preserve the existing content, facts, numbers, key messages, terminology, and overall storyline.
+- Do NOT rewrite or remove important information.
+- Do NOT change the meaning of any slide.
+- Do NOT invent statistics, achievements, or business outcomes.
+- The task is primarily to improve the presentation quality, visual hierarchy, structure, and executive readability.
+
+Design it as a premium enterprise technology presentation suitable for a large banking organization.
+
+Design requirements:
+- Clean, modern, professional executive style.
+- Strong visual hierarchy.
+- Minimal but impactful text.
+- Use concise headings and supporting content.
+- Convert long paragraphs into clean visual blocks where appropriate.
+- Use diagrams, process flows, timelines, icons, and visual frameworks where they genuinely improve understanding.
+- Avoid excessive decorative graphics.
+- Use consistent typography, spacing, alignment, and margins.
+- Maintain a polished corporate aesthetic throughout.
+- Ensure every slide looks intentionally designed rather than template-generated.
+- Use charts/visuals only when they represent information already present in the uploaded PPT.
+- Keep the existing slide count unless there is a strong design reason to restructure.
+- Make the slides readable when projected in a large meeting room.
+
+For each slide:
+1. Preserve the original message.
+2. Identify the key takeaway.
+3. Make that takeaway visually dominant.
+4. Reduce visual clutter.
+5. Improve layout and information hierarchy.
+6. Use appropriate visual storytelling.
+7. Ensure the slide can be understood quickly by an executive audience.
+
+Do not make the presentation overly flashy or marketing-heavy.
+
+The final result should feel like a presentation prepared by a professional enterprise strategy/technology consulting team for senior banking leadership.
+
+Before finalizing, check:
+- No content has been accidentally removed.
+- No facts or numbers have changed.
+- No text is cut off.
+- No overlapping elements.
+- Fonts are consistent.
+- Alignment and spacing are consistent.
+- Visuals support the message.
+- Every slide has a clear executive takeaway.
+- The complete deck has a consistent story from beginning to end.
+
+Output the redesigned PowerPoint while retaining the original content and improving only its presentation quality.
