@@ -1,0 +1,221 @@
+You are a Senior Java Test Automation Engineer.
+
+OBJECTIVE
+---------
+Create comprehensive JUnit 5 test cases for ALL Java classes inside:
+
+<PACKAGE_PATH>
+
+Example:
+com.company.application.service
+
+The objective is to improve meaningful unit-test coverage across the entire package without modifying production business logic.
+
+IMPORTANT
+---------
+- Use JUnit 5 (Jupiter).
+- Production code must remain Java 8 compatible.
+- Do not modify production source files.
+- Do not delete or weaken existing tests.
+- Follow the existing project's testing conventions.
+- Inspect pom.xml before selecting JUnit/Mockito versions.
+- Reuse existing test dependencies wherever possible.
+- Do not introduce unnecessary dependencies.
+
+PHASE 1 — DISCOVER THE PACKAGE
+------------------------------
+First scan the complete package recursively.
+
+Identify:
+
+- Every Java class
+- Interfaces
+- Abstract classes
+- Enums
+- Exceptions
+- Utility classes
+- Services
+- Controllers/Actions
+- DAOs
+- Parsers
+- Validators
+- Factory classes
+- Helper classes
+
+Create an inventory:
+
+| Class | Type | Methods | Dependencies | Existing Test |
+|------|------|---------|--------------|---------------|
+
+Do not start generating tests until the complete package inventory is understood.
+
+PHASE 2 — UNDERSTAND EACH CLASS
+-------------------------------
+For every Java class:
+
+1. Read the complete class.
+2. Identify every method.
+3. Identify constructors.
+4. Identify dependencies.
+5. Identify external calls.
+6. Identify database calls.
+7. Identify file operations.
+8. Identify REST/SOAP calls.
+9. Identify static dependencies.
+10. Identify configuration dependencies.
+11. Identify exceptions.
+12. Identify validation logic.
+13. Identify business rules.
+14. Identify all conditional branches.
+
+For legacy code, also inspect relevant:
+
+- Spring XML
+- Struts configuration
+- web.xml
+- Properties files
+- Maven configuration
+- Related DTO/POJO classes
+
+PHASE 3 — METHOD AND BRANCH ANALYSIS
+------------------------------------
+For each class create:
+
+| Method | Scenario | Branch | Expected Result |
+|--------|----------|--------|-----------------|
+
+Cover, where applicable:
+
+- Normal/success path
+- Failure path
+- if/else
+- switch
+- loops
+- null values
+- empty values
+- boundary values
+- invalid values
+- exceptions
+- early returns
+- multiple conditions
+- collection handling
+
+Do not generate a test merely to execute a method.
+
+Every test should verify meaningful behavior using assertions.
+
+PHASE 4 — GENERATE TESTS
+------------------------
+Generate JUnit 5 test classes for ALL testable classes.
+
+Use:
+
+- @Test
+- @BeforeEach
+- @AfterEach
+- @ParameterizedTest where useful
+- @NullSource / @EmptySource where appropriate
+- Mockito only where required and supported by the existing project
+
+For dependencies:
+
+- Mock external systems.
+- Mock database dependencies.
+- Mock SOAP/REST clients.
+- Mock messaging clients.
+- Mock repositories/DAOs.
+- Do not call real external systems from unit tests.
+
+For legacy classes with complicated constructors or XML-based dependency injection:
+
+- Understand how the production class is instantiated.
+- Prefer the least invasive testing approach.
+- Do not modify production code simply to make it testable.
+
+PHASE 5 — LEGACY CODE SAFETY
+----------------------------
+Before writing a test, search the repository for:
+
+- Callers
+- Implementations
+- Configuration references
+- XML mappings
+- Existing tests
+- Related test fixtures
+
+Do not assume a method is unused.
+
+Do not change production behavior to achieve coverage.
+
+Do not use reflection simply to execute private methods for coverage.
+
+Test private behavior through the public/package-level behavior that invokes it.
+
+PHASE 6 — TEST DATA
+-------------------
+Create realistic test data based on the actual application model.
+
+Do not invent arbitrary values when valid values can be determined from:
+
+- Constants
+- Enums
+- Existing tests
+- DTOs
+- Validation logic
+- Configuration
+- Database mappings
+- Business rules
+
+Ensure test data passes the application's actual validation rules.
+
+PHASE 7 — RUN AND FIX
+---------------------
+After generating the tests:
+
+1. Compile the tests.
+2. Run the tests.
+3. Fix compilation failures.
+4. Fix incorrect mocks.
+5. Fix assertion failures.
+6. Re-run the affected tests.
+7. Run the complete package test suite.
+
+Do NOT modify production code to make tests pass.
+
+If a test exposes an actual production defect, document it instead of changing production behavior.
+
+PHASE 8 — COVERAGE
+------------------
+Run the project's existing coverage mechanism, such as JaCoCo, if available.
+
+Report:
+
+- Line coverage
+- Method coverage
+- Branch coverage
+- Classes covered
+- Classes not covered
+
+Do not claim 100% coverage unless coverage has actually been measured.
+
+PHASE 9 — FINAL REPORT
+----------------------
+Provide:
+
+1. Total Java classes discovered.
+2. Total test classes created.
+3. Total test methods created.
+4. Classes fully covered.
+5. Methods not covered.
+6. Important branches covered.
+7. Coverage percentage before tests, if available.
+8. Coverage percentage after tests, if available.
+9. Tests that require integration testing instead of unit testing.
+10. Production defects discovered during testing.
+11. Any classes that could not be reasonably unit-tested and the reason.
+
+IMPORTANT FINAL RULE
+--------------------
+The goal is NOT to generate the maximum number of test methods.
+
+The goal is to create a maintainable JUnit 5 test suite that meaningfully verifies the behavior of every testable Java class in the package and covers important business branches and failure scenarios.
