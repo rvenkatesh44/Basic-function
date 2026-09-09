@@ -1,0 +1,60 @@
+Analyze the attached Java class and generate a comprehensive JUnit 5 test class.
+
+Requirements:
+
+1. Use Java 8 compatible syntax.
+2. Use JUnit 5 (Jupiter).
+3. Cover every method in the target class, including:
+   - public methods
+   - protected methods where testable
+   - package-private methods where appropriate
+   - private methods indirectly through public methods; do not use reflection just to increase coverage.
+4. Analyze the implementation before generating tests.
+5. Identify all execution paths, including:
+   - if/else
+   - switch
+   - loops
+   - null checks
+   - exception paths
+   - validation failures
+   - boundary conditions
+   - success/failure conditions
+   - early returns
+6. Create meaningful test data that satisfies the actual business logic.
+7. Do not write tests that simply execute methods without assertions.
+8. Add assertions that verify the actual expected behavior.
+9. Use Mockito where dependencies need to be mocked.
+10. Do not modify production code.
+11. Do not change the existing business logic merely to make testing easier.
+12. Reuse the project's existing testing conventions if they are present.
+13. Inspect the Maven pom.xml and existing test dependencies before choosing Mockito or other libraries.
+14. Do not introduce a new testing library if an existing dependency can accomplish the requirement.
+15. For legacy code, inspect constructors, Spring dependencies, XML configuration, static methods, database calls, external API calls, and utility classes before designing the tests.
+16. If a method cannot be reasonably unit-tested because of a dependency or legacy design, explain the exact reason instead of creating a meaningless test.
+
+Before generating the test class, produce:
+
+A. Method inventory
+
+| Method | Visibility | Main scenarios | Dependencies | Tests required |
+
+B. Branch/condition inventory
+
+| Method | Condition | True case | False case | Boundary/exception case |
+
+C. Test strategy
+
+Explain how each method and important branch will be covered.
+
+Then generate the complete JUnit 5 test class.
+
+Finally provide:
+
+1. Number of test methods generated.
+2. Methods covered.
+3. Important branches covered.
+4. Any methods/branches that could not be covered and why.
+5. Expected areas that may still require integration testing.
+
+Important:
+Do not claim 100% coverage unless it has actually been verified by running the tests with a coverage tool such as JaCoCo.
