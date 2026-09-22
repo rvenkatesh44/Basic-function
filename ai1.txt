@@ -1,0 +1,33 @@
+AI Agent
+Understands what you ask.
+Thinks about what to do.
+Uses tools when needed.
+Takes action for you.
+Gives you the result.
+
+Simple AI Agent Workflow
+User:
+“Find me a good laptop under ₹70,000.”
+
+        👤 User
+          │
+          ▼
+   🤖 AI Agent
+          │
+          ▼
+   Understand request
+          │
+          ▼
+   🔍 Search products
+          │
+          ▼
+   📊 Compare laptops
+          │
+          ▼
+   💰 Check price & availability
+          │
+          ▼
+   ⭐ Recommend best options
+          │
+          ▼
+        👤 User
