@@ -41,3 +41,39 @@ Asks for approval before important actions.
           │
           ▼
         👤 User
+
+Topic_name:
+AI Agent vs Agentic AI
+
+Topic_description:
+Create a simple side-by-side flow chart explaining the difference between an AI Agent and Agentic AI. Keep the language very simple and suitable for a company-wide AI Tech Byte. Show that an AI Agent understands a task, uses tools, performs a few actions, and provides a result. Show that Agentic AI understands a broader goal, creates a plan, performs multiple steps, makes decisions along the way, checks results, and takes actions with appropriate human approval. Use short phrases, clear arrows, simple icons, and minimal technical jargon.
+
+Example_context:
+Use a shopping website example.
+
+AI Agent flow:
+User asks: “Find me a good laptop under ₹70,000.”
+→ Understand request
+→ Search laptops
+→ Compare price and specifications
+→ Recommend suitable options
+→ User decides what to do next
+
+Agentic AI flow:
+User asks: “Find the best laptop under ₹70,000 and order it for me.”
+→ Understand goal
+→ Create a plan
+→ Search laptops
+→ Compare price, specifications, reviews and availability
+→ Select the best option
+→ Add to cart
+→ Ask user for approval
+→ Place order
+→ Confirm order
+
+Show the key difference at the bottom:
+“AI Agent helps complete a task.”
+“Agentic AI works toward completing a goal through multiple steps.”
+
+Design:
+Modern enterprise technology poster, clean side-by-side layout, clear flowchart arrows, simple professional icons, large readable headings, minimal text, visually appealing and suitable for sharing across Teams, email, or an internal AI community.
