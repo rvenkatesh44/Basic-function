@@ -1,0 +1,58 @@
+Topic_description:
+Create a polished corporate AI Tech Byte infographic poster titled “Why Does AI Hallucinate?” in a modern, friendly, professional enterprise style. Use a portrait layout with a clean blue header, pastel content sections, rounded rectangular cards, flat vector illustrations, simple icons, arrows, speech bubbles, and large highly readable sans-serif typography.
+
+At the top, include a small “AI Tech Byte” label with a lightbulb icon and the words “Learn • Share • Use Responsibly”. Make the main title large and prominent: “Why Does AI Hallucinate?” Highlight the word “Hallucinate?” in yellow. Add the subtitle: “AI can generate confident but incorrect information because it predicts likely answers; it doesn’t always know what’s true.” Add a sticky-note style callout: “Confident ≠ Correct!”
+
+Below the header, create a section titled “What is AI Hallucination?” Explain simply: “When AI gives information that sounds believable but is incorrect, incomplete or made up.” Include a friendly AI robot illustration with a speech bubble saying “I’m confident!” and a handwritten-style note: “A fluent answer doesn’t always mean it’s true.”
+
+Create two side-by-side example cards:
+
+Example 1: Travel
+User asks: “What is the flight time from Chennai to Singapore?”
+AI responds with a confident but incorrect flight-time estimate.
+Show a red X and explain that the AI gave an incorrect answer confidently.
+
+Example 2: Workplace
+User asks: “What is our company’s latest work from home policy?”
+AI gives a confident policy statement that may be outdated or incorrect.
+Show a red X and explain that AI may provide outdated or made-up information.
+
+Then create a horizontal flowchart titled “How Hallucination Happens” with six numbered stages connected by arrows:
+1. User asks a question
+2. AI interprets the request
+3. Missing, outdated or insufficient information
+4. AI predicts the most likely answer
+5. AI may give an incorrect but confident response
+6. Hallucinated information
+
+Below that, create two side-by-side sections.
+
+Left section: “Common Reasons”
+Show five small illustrated icon cards:
+- Ambiguous questions
+- Outdated information
+- Missing context
+- Incorrect assumptions
+- Limited access to real-time data
+
+Right section: “How to Reduce Hallucinations”
+Show a vertical checklist with green check icons:
+- Provide clear and complete context
+- Use trusted and up-to-date data sources
+- Use search or RAG when current information is needed
+- Ask the AI to provide sources
+- Verify important information
+- Keep human review for high-impact decisions
+
+Near the bottom, create a large highlighted “Key Takeaway” section with a target icon and the statement:
+“AI can sound confident even when it is wrong. Always validate important information.”
+
+Add a small handwritten-style note such as:
+“Use AI wisely. Verify always.”
+
+Finish with a dark blue footer containing:
+“People + AI = Better Outcomes”
+and a small closing phrase:
+“Be Curious. Be Informed. Be Responsible.”
+
+Visual style: clean enterprise infographic, professional but approachable, flat vector illustrations, soft pastel blue/green/yellow/pink/lavender cards, dark navy typography, consistent icon style, rounded corners, generous spacing, clear visual hierarchy, minimal clutter, crisp readable text, suitable for circulation through Teams, email and internal AI communities. Make all text exactly readable and correctly spelled. Do not use photorealistic imagery, complex backgrounds, excessive gradients, or dense technical diagrams.
