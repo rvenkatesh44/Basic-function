@@ -1,0 +1,5 @@
+Topic_name: AI Agent vs Agentic AI
+
+Topic_description: A simple introduction to the difference between an AI Agent and Agentic AI. Explain how an AI Agent can understand a request, use tools, and provide a response, while Agentic AI can pursue a broader goal through multiple steps, make decisions, use multiple tools, and take actions with appropriate guardrails and human approval. Keep the explanation simple and suitable for a non-technical enterprise audience.
+
+Example_context: Shopping website example. AI Agent: A user asks, "Find me a good laptop under ₹70,000." The AI searches products, compares specifications and prices, and recommends suitable laptops. Agentic AI: A user asks, "Find the best laptop under ₹70,000 and help me buy it." The AI understands the goal, searches products, compares specifications, price and availability, checks reviews, selects an option based on the user's criteria, adds it to the cart, and requests human approval before placing the order. Highlight the key difference: AI Agent helps complete a task, while Agentic AI can coordinate a multi-step workflow toward a goal.
