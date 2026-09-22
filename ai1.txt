@@ -15,7 +15,17 @@ User:
    🤖 AI Agent
           │
           ▼
-   Understand request
+   Understand requ
+
+
+Agentic AI
+Understands your goal.
+Plans what to do.
+Uses multiple tools when needed.
+Makes decisions along the way.
+Takes multiple actions for you.
+Checks the results and continues if needed.
+Asks for approval before important actions.
           │
           ▼
    🔍 Search products
