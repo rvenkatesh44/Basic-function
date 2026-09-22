@@ -1,0 +1,29 @@
+Topic_name:
+Why Does AI Hallucinate?
+
+Topic_description:
+Create a simple educational poster explaining why AI sometimes gives incorrect or made-up information. Explain that AI generates responses by predicting likely patterns based on its training and the information available in the conversation or connected sources. It does not automatically verify whether every statement is true. Show common causes such as missing information, ambiguous questions, outdated information, insufficient context, and incorrect assumptions. Keep the language very simple and suitable for a company-wide AI Tech Byte. Avoid complex technical terminology.
+
+Example_context:
+Use a simple restaurant recommendation example.
+
+User asks:
+“Which restaurant near me is open now and serves good vegetarian food?”
+
+AI may confidently respond:
+“ABC Restaurant is open until 11 PM and has several vegetarian dishes.”
+
+However, the restaurant may actually be closed, the information may be outdated, or the restaurant may not have the claimed menu options.
+
+Show the flow:
+User question
+→ AI interprets the request
+→ AI lacks reliable or current information
+→ AI predicts a likely answer
+→ AI may provide incorrect information
+→ Hallucinated response
+
+Show another simple visual:
+AI Confidence ≠ AI Accuracy
+
+Explain that
